@@ -400,7 +400,4 @@ ss -tulnp
 - CI/CD (GitHub Actions / GitLab CI)
 - Резервные копии (rsync / borg)
 - Мониторинг (Prometheus + Grafana)
-
 ---
-
-Если нужно — можно сделать отдельный чек-лист «production hardening» (ещё сильнее закрутить безопасность).
