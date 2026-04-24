@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux basic/ssh/18 - Каскадный ssh.md",
-                "mode": "preview",
+                "file": "Linux заметки/Пользователи группы/04 inode, symlink, hard link.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "18 - Каскадный ssh"
+              "title": "04 inode, symlink, hard link"
             }
           }
         ]
@@ -112,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Linux basic/ssh/18 - Каскадный ssh.md",
+            "file": "Linux заметки/Пользователи группы/04 inode, symlink, hard link.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -168,36 +168,40 @@
   },
   "active": "5d5db23f91e5bf48",
   "lastOpenFiles": [
-    "Linux basic/ssh/16 - Безопасная настройка SSH сервера.md",
-    "Linux basic/ssh/17 - Частые ошибки SSH.md",
-    "Linux basic/ssh/15 - Диагностика SSH подключения.md",
-    "Linux basic/ssh/14 - Port forwarding через SSH.md",
-    "Linux basic/ssh/07 - Добавление публичного ключа на сервер.md",
-    "Linux basic/ssh/11 - known_hosts и проверка сервера.md",
-    "Linux basic/ssh/10 - SSH server config sshd_config.md",
-    "Linux basic/ssh/12 - SSH agent.md",
-    "Linux basic/ssh/13 - Копирование файлов через scp, rsync и sftp.md",
-    "Linux basic/ssh/18 - Каскадный ssh.md",
-    "Linux basic/ssh/00 - SSH - карта темы.md",
-    "Linux basic/ssh/09 - SSH client config.md",
-    "Linux basic/ssh/08 - Права доступа на .ssh и authorized_keys.md",
-    "Linux basic/ssh/06 - Где хранятся SSH ключи.md",
-    "Linux basic/ssh/05 - Генерация SSH ключа.md",
-    "Linux basic/ssh/04 - Типы SSH ключей и надежность.md",
-    "Linux basic/ssh/03 - Пользователи и домашние директории.md",
-    "Linux basic/ssh/02 - Подключение по SSH через консоль.md",
-    "Linux basic/ssh/01 - Что такое SSH.md",
-    "Сети/📘 Маска подсети (быстрая памятка).md",
-    "Linux basic/ssh",
-    "Сети/📘 Диапазоны сетей краткая памятка.md",
+    "Linux заметки/Пользователи группы/05 umask и ACL.md",
+    "Linux заметки/Пользователи группы/0 мини шпаргалка.md",
+    "Linux заметки/Пользователи группы/00. Список команд по пройденным темам.md",
+    "Linux заметки/Пользователи группы/04 inode, symlink, hard link.md",
+    "Linux заметки/Пользователи группы/03 Почему x у файла и директории — это не одно и то же.md",
+    "Linux заметки/Пользователи группы/02 Особые права setuid, setgid, sticky bit.md",
+    "Linux заметки/Пользователи группы/01 Пользователи, группы, обычные права.md",
+    "Linux заметки/Пользователи группы/Без названия.base",
+    "Linux заметки/ssh/18 - Каскадный ssh.md",
+    "Linux заметки/Пользователи группы/Без названия.canvas",
+    "Linux заметки/Пользователи группы",
+    "Linux заметки/ssh/16 - Безопасная настройка SSH сервера.md",
+    "Linux заметки/ssh/17 - Частые ошибки SSH.md",
+    "Linux заметки/ssh/15 - Диагностика SSH подключения.md",
+    "Linux заметки/ssh/14 - Port forwarding через SSH.md",
+    "Linux заметки/ssh/07 - Добавление публичного ключа на сервер.md",
+    "Linux заметки/ssh/11 - known_hosts и проверка сервера.md",
+    "Linux заметки/ssh/10 - SSH server config sshd_config.md",
+    "Linux заметки/ssh/12 - SSH agent.md",
+    "Linux заметки/ssh/13 - Копирование файлов через scp, rsync и sftp.md",
+    "Linux заметки/ssh/00 - SSH - карта темы.md",
+    "Linux заметки/ssh/09 - SSH client config.md",
+    "Linux заметки/ssh/08 - Права доступа на .ssh и authorized_keys.md",
+    "Linux заметки/ssh/06 - Где хранятся SSH ключи.md",
+    "Linux заметки/ssh/05 - Генерация SSH ключа.md",
+    "Linux заметки/ssh/04 - Типы SSH ключей и надежность.md",
+    "Linux заметки/ssh/03 - Пользователи и домашние директории.md",
+    "Linux заметки/ssh/02 - Подключение по SSH через консоль.md",
+    "Linux заметки/ssh/01 - Что такое SSH.md",
+    "Linux заметки/ssh",
     "Сети/📘 Что Ещё надо знать про сети.pdf",
-    "Linux basic/🖥️ Настройка сервера базовая Ubuntu..md",
-    "Linux basic/📘 Памятка по Linux базовая навигация, поиск, фильтрация и работа с файлами.md",
-    "Траблшутинг/🧭 Памятка по troubleshooting в Linux.md",
     "Без названия",
-    "2026-04-21.md",
     "Траблшутинг",
     "Сети",
-    "Linux basic"
+    "Linux заметки"
   ]
 }
