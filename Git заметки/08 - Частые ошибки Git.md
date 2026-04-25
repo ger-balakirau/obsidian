@@ -100,6 +100,83 @@ ssh -T git@github.com
 - [[Linux заметки/ssh/15 - Диагностика SSH-подключения]]
 - [[Linux заметки/ssh/17 - Частые ошибки SSH]]
 
+## `Your local changes would be overwritten`
+
+Git не даёт переключиться или сделать pull, потому что локальные изменения будут перезаписаны.
+
+Варианты:
+
+Сохранить изменения в commit:
+
+```bash
+git add .
+git commit -m "Save work"
+```
+
+Временно спрятать:
+
+```bash
+git stash
+```
+
+Выкинуть изменения, если они точно не нужны:
+
+```bash
+git reset --hard HEAD
+```
+
+## `Untracked working tree files would be overwritten`
+
+Есть неотслеживаемые файлы, которые конфликтуют с файлами из ветки или remote.
+
+Проверить:
+
+```bash
+git status
+```
+
+Удалить неотслеживаемые файлы осторожно:
+
+```bash
+git clean -fdn
+git clean -fd
+```
+
+## Случайно сделал `reset --hard`
+
+Не паникуй, сначала посмотри:
+
+```bash
+git reflog
+```
+
+Если нужный commit есть в reflog:
+
+```bash
+git switch -c rescue <commit>
+```
+
+Подробно: [[10 - Reflog - поиск потерянных commits]]
+
+## Нужно сделать force push
+
+Сначала проверь, что это твоя ветка, а не общая ветка команды.
+
+Безопаснее:
+
+```bash
+git fetch
+git push --force-with-lease
+```
+
+Опаснее:
+
+```bash
+git push --force
+```
+
+`--force` может перезаписать чужие commits на remote. Для обычной работы почти всегда лучше `--force-with-lease`.
+
 ## Главное запомнить
 
 При ошибке сначала запускай:
@@ -108,4 +185,5 @@ ssh -T git@github.com
 git status
 git remote -v
 git branch -vv
+git reflog
 ```

@@ -13,6 +13,7 @@ git diff --staged
 git log --oneline
 git log --oneline --graph --decorate --all
 git show
+git reflog
 ```
 
 ## Staging и commit
@@ -24,6 +25,14 @@ git add .
 git restore --staged file.txt
 git commit -m "Message"
 git commit --amend
+```
+
+## Создать или получить репозиторий
+
+```bash
+git init
+git clone git@github.com:user/project.git
+git clone https://github.com/user/project.git
 ```
 
 ## Ветки
@@ -49,6 +58,8 @@ git fetch
 git pull
 git push
 git push -u origin feature/name
+git push --force-with-lease
+git push --force
 ```
 
 ## Отмена изменений
@@ -59,7 +70,24 @@ git push -u origin feature/name
 git restore file.txt
 git restore --staged file.txt
 git reset --soft HEAD~1
+git reset --mixed HEAD~1
+git reset --hard HEAD
 git revert <commit>
+git clean -fd
+git reflog
+```
+
+## Stash
+
+Подробнее: [[09 - Stash - временно спрятать изменения]]
+
+```bash
+git stash
+git stash push -m "message"
+git stash list
+git stash pop
+git stash apply stash@{0}
+git stash drop stash@{0}
 ```
 
 ## `.gitignore`
@@ -81,6 +109,7 @@ git status
 git remote -v
 git branch -vv
 git log --oneline --graph --decorate --all
+git reflog
 ```
 
 ## Минимум на память

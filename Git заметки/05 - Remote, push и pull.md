@@ -59,6 +59,43 @@ git push -u origin feature/name
 git push
 ```
 
+## Force push
+
+`force push` перезаписывает историю remote-ветки. Это опасно, если в этой ветке работают другие люди.
+
+Более безопасный вариант:
+
+```bash
+git push --force-with-lease
+```
+
+Он перезапишет remote только если remote-ветка не изменилась с момента твоего последнего `fetch`.
+
+Более грубый вариант:
+
+```bash
+git push --force
+```
+
+Его лучше избегать, потому что он может затереть чужие commits на remote.
+
+Когда force push бывает нужен:
+
+- после локального `rebase`;
+- после `commit --amend`, если commit уже был отправлен;
+- после `reset`, если осознанно переписываешь свою ветку.
+
+Перед force push проверь:
+
+```bash
+git status
+git fetch
+git branch -vv
+git log --oneline --graph --decorate --all
+```
+
+Правило: если ветка общая (`main`, `master`, `develop`) - не делай force push без явной договорённости.
+
 ## Посмотреть связь локальной и remote-ветки
 
 ```bash
@@ -95,3 +132,4 @@ ssh -T git@gitlab.com
 - `pull` получает и применяет изменения.
 - `push` отправляет твои commits.
 - `git push -u origin branch` связывает локальную ветку с remote-веткой.
+- `--force-with-lease` безопаснее, чем `--force`.
