@@ -1,171 +1,57 @@
-# 1. Передача файлов через SCP
+# Копирование файлов через `scp`, `rsync` и `sftp`
 
-`scp` — это копирование файлов через SSH.
+Передача файлов через SSH делится на три основных сценария:
 
-## С локального компьютера на сервер
+- `scp` — быстро скопировать один файл или папку;
+- `rsync` — синхронизировать директории, докачивать изменения, деплоить проекты;
+- `sftp` — интерактивно ходить по серверу и передавать файлы командами `put` и `get`.
 
-```bash
-scp file.txt user@server.com:/home/user/
-```
+## Быстрый выбор инструмента
 
-С указанием ключа:
+| Задача | Лучше использовать |
+|---|---|
+| Передать один файл | `scp` |
+| Скачать один файл с сервера | `scp` |
+| Передать папку один раз | `scp -r` |
+| Синхронизировать проект | `rsync` |
+| Деплоить только изменения | `rsync` |
+| Удалять на сервере лишнее при синхронизации | `rsync --delete` |
+| Работать интерактивно как в FTP | `sftp` |
+| Смотреть файлы и выборочно скачивать | `sftp` |
 
-```bash
-scp -i ~/.ssh/id_ed25519 file.txt user@server.com:/home/user/
-```
+## Подробные темы
 
-С указанием порта:
+1. [[Linux заметки/ssh/Передача файлов/00 - Карта темы|Карта подтемы]]
+2. [[Linux заметки/ssh/Передача файлов/01 - SCP - быстрое копирование файлов]]
+3. [[Linux заметки/ssh/Передача файлов/02 - Rsync - синхронизация и деплой]]
+4. [[Linux заметки/ssh/Передача файлов/03 - SFTP - интерактивная передача файлов]]
+5. [[Linux заметки/ssh/Передача файлов/04 - Практические сценарии передачи файлов]]
 
-```bash
-scp -P 2222 file.txt user@server.com:/home/user/
-```
-
-Важно: у `scp` порт указывается через `-P` с большой буквы.
-
-С ключом и портом:
-
-```bash
-scp -i ~/.ssh/id_ed25519 -P 2222 file.txt user@server.com:/home/user/
-```
-
----
-
-## С сервера на локальный компьютер
+## Минимальная шпаргалка
 
 ```bash
-scp user@server.com:/home/user/file.txt .
-```
+scp file.txt user@server.com:/tmp/
+scp user@server.com:/var/log/app.log .
+scp -r ./site user@server.com:/srv/site
 
-С ключом:
+rsync -av ./project/ user@server.com:/srv/project/
+rsync -avz --progress ./backup/ user@server.com:/backup/
+rsync -av --delete ./site/ user@server.com:/srv/site/
 
-```bash
-scp -i ~/.ssh/id_ed25519 user@server.com:/home/user/file.txt .
-```
-
-С портом:
-
-```bash
-scp -P 2222 user@server.com:/home/user/file.txt .
-```
-
----
-
-## Копирование папки через SCP
-
-Для папок используется `-r`.
-
-```bash
-scp -r ./my-folder user@server.com:/home/user/
-```
-
-С ключом и портом:
-
-```bash
-scp -i ~/.ssh/id_ed25519 -P 2222 -r ./my-folder user@server.com:/home/user/
-```
-
----
-
-# 2. Передача файлов через RSYNC
-
-`rsync` удобен для синхронизации файлов и папок.
-
-## С локального компьютера на сервер
-
-```bash
-rsync -av ./project/ user@server.com:/var/www/project/
-```
-
-С ключом:
-
-```bash
-rsync -av -e "ssh -i ~/.ssh/id_ed25519" ./project/ user@server.com:/var/www/project/
-```
-
-С портом:
-
-```bash
-rsync -av -e "ssh -p 2222" ./project/ user@server.com:/var/www/project/
-```
-
-С ключом и портом:
-
-```bash
-rsync -av -e "ssh -i ~/.ssh/id_ed25519 -p 2222" ./project/ user@server.com:/var/www/project/
-```
-
----
-
-## С сервера на локальный компьютер
-
-```bash
-rsync -av user@server.com:/var/www/project/ ./project/
-```
-
-С ключом и портом:
-
-```bash
-rsync -av -e "ssh -i ~/.ssh/id_ed25519 -p 2222" user@server.com:/var/www/project/ ./project/
-```
-
----
-
-## Удаление лишних файлов при синхронизации
-
-```bash
-rsync -av --delete ./project/ user@server.com:/var/www/project/
-```
-
-Осторожно: `--delete` удаляет на сервере файлы, которых нет локально.
-
----
-
-# 3. SFTP через консоль
-
-SFTP — интерактивная передача файлов через SSH.
-
-```bash
 sftp user@server.com
 ```
 
-С ключом:
+С готовым алиасом из [[09 - SSH client config]]:
 
 ```bash
-sftp -i ~/.ssh/id_ed25519 user@server.com
+scp file.txt work:/tmp/
+rsync -av ./project/ work:/srv/project/
+sftp work
 ```
 
-С портом:
+## Главное запомнить
 
-```bash
-sftp -P 2222 user@server.com
-```
-
-Команды внутри SFTP:
-
-```text
-ls       — список файлов на сервере
-lls      — список локальных файлов
-pwd      — текущая папка на сервере
-lpwd     — текущая локальная папка
-cd       — перейти в папку на сервере
-lcd      — перейти в локальную папку
-put      — загрузить файл на сервер
-get      — скачать файл с сервера
-mkdir    — создать папку на сервере
-rm       — удалить файл на сервере
-exit     — выйти
-```
-
-Пример загрузки файла:
-
-```text
-put file.txt
-```
-
-Пример скачивания файла:
-
-```text
-get file.txt
-```
-
----
+- Для разового копирования чаще достаточно `scp`.
+- Для повторяемой передачи проекта лучше `rsync`.
+- Для ручной работы с файлами удобен `sftp`.
+- Если настроен `Host work` в `~/.ssh/config`, его можно использовать в `ssh`, `scp`, `rsync` и `sftp`.

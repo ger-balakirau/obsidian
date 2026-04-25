@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "f29aa962456c7e62",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4858cb042da128b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bade67edb2e4a25",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git заметки/02 - Базовый рабочий цикл.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02 - Базовый рабочий цикл"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8c403b8985c8c1ae",
+    "type": "split",
+    "children": [
+      {
+        "id": "f7ef87c0fbc2cdd1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0baaf7ca7ed5bf5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "4a4b9d0aadcde123",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "c4b81385cc7df470",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "721ead7b7fd19962",
+    "type": "split",
+    "children": [
+      {
+        "id": "c75c4c903b5c0faa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a8ac28b4b505a3a6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Linux заметки/ssh/16 - Безопасная настройка SSH сервера.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для 16 - Безопасная настройка SSH сервера"
+            }
+          },
+          {
+            "id": "7d4a2e2f5588de97",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Linux заметки/ssh/16 - Безопасная настройка SSH сервера.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из 16 - Безопасная настройка SSH сервера"
+            }
+          },
+          {
+            "id": "916a51f50ebc6aee",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "361eed5f037507a4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "571d1f89d37e44c4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Linux заметки/ssh/16 - Безопасная настройка SSH сервера.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура 16 - Безопасная настройка SSH сервера"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "8bade67edb2e4a25",
+  "lastOpenFiles": [
+    "Git заметки/01 - Что такое Git.md",
+    "Git заметки/00 - Карта темы.md",
+    "Git заметки/02 - Базовый рабочий цикл.md",
+    "Git заметки/03 - Команды Git - общая шпаргалка.md",
+    "Linux заметки/ssh/Передача файлов/04 - Практические сценарии передачи файлов.md",
+    "Linux заметки/ssh/Передача файлов/03 - SFTP - интерактивная передача файлов.md",
+    "Linux заметки/ssh/Передача файлов/02 - Rsync - синхронизация и деплой.md",
+    "Linux заметки/ssh/Передача файлов/01 - SCP - быстрое копирование файлов.md",
+    "Git заметки/08 - Частые ошибки Git.md",
+    "Git заметки/07 - Отмена изменений и восстановление.md",
+    "Git заметки/06 - Gitignore и чистота репозитория.md",
+    "Git заметки/05 - Remote, push и pull.md",
+    "Git заметки/04 - Ветки и переключение контекста.md",
+    "Git заметки",
+    "Linux заметки/ssh/Передача файлов/00 - Карта темы.md",
+    "Linux заметки/ssh/13 - Копирование файлов через scp, rsync и sftp.md",
+    "Linux заметки/ssh/Передача файлов",
+    "Linux заметки/ssh/19 - Команды SSH - общая шпаргалка.md",
+    "Linux заметки/ssh/09 - SSH client config.md",
+    "Linux заметки/00 - Стартовая карта для новичка.md",
+    "Linux заметки/02 - Ubuntu Server - базовая настройка.md",
+    "Linux заметки/01 - Linux - базовая навигация, поиск и файлы.md",
+    "Linux заметки/ssh/11 - Known hosts и проверка сервера.md",
+    "Linux заметки/ssh/02 - Подключение по SSH через консоль.md",
+    "Linux заметки/ssh/03 - Пользователи и домашние директории.md",
+    "Linux заметки/ssh/01 - Что такое SSH.md",
+    "Linux заметки/ssh/00 - Карта темы.md",
+    "Linux заметки/Пользователи группы/00 - Карта темы.md"
+  ]
+}
