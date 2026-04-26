@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7a054b1da9682815",
+        "id": "10da6a1f205d680a",
         "type": "tabs",
         "children": [
           {
-            "id": "c08fba441cf63dc6",
+            "id": "31ed86e975cd4b89",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Windows Server заметки/01 - Что такое Windows Server.md",
+                "file": "Windows Server заметки/15 - Команды Windows админа наизусть.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 - Что такое Windows Server"
+              "title": "15 - Команды Windows админа наизусть"
             }
           }
         ]
@@ -183,41 +183,43 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "c08fba441cf63dc6",
+  "active": "31ed86e975cd4b89",
   "lastOpenFiles": [
-    "Вакансии/Постак - системный администратор/02 - Матрица навыков.md",
-    "Вакансии/Постак - системный администратор/01 - Разбор вакансии.md",
-    "Windows Server заметки/00 - Карта темы.md",
+    "Вакансии/системный администратор/06 - Что подтянуть в моей базе знаний.md",
+    "Вакансии/системный администратор/04 - Вопросы на собеседование.md",
+    "Вакансии/системный администратор/05 - Лабораторные работы.md",
+    "Вакансии/системный администратор/03 - План подготовки на 4 недели.md",
+    "Вакансии/системный администратор/02 - Матрица навыков.md",
+    "Вакансии/системный администратор/01 - Разбор вакансии.md",
+    "Вакансии/системный администратор/00 - Карта подготовки.md",
+    "Вакансии/00 - Карта раздела Вакансии.md",
+    "Windows Server заметки/13 - Hyper-V lab сеть - проблемы и решения.md",
+    "Windows Server заметки/12 - Удаление Windows NAT.md",
+    "Windows Server заметки/11 - Windows NAT через PowerShell.md",
     "Windows Server заметки/10 - Команды Windows Server - шпаргалка.md",
     "Windows Server заметки/09 - Event Viewer и диагностика.md",
     "Windows Server заметки/08 - Файловые шары и права доступа.md",
     "Windows Server заметки/07 - WSUS - обновления Windows.md",
     "Windows Server заметки/06 - Join computer to domain.md",
-    "Windows Server заметки/04 - Пользователи, группы и OU.md",
     "Windows Server заметки/05 - GPO - групповые политики.md",
-    "Windows Server заметки/02 - Active Directory - базовая модель.md",
+    "Windows Server заметки/04 - Пользователи, группы и OU.md",
     "Windows Server заметки/03 - DNS в Active Directory.md",
+    "Windows Server заметки/02 - Active Directory - базовая модель.md",
     "Windows Server заметки/01 - Что такое Windows Server.md",
-    "Windows Server заметки",
-    "Вакансии/Постак - системный администратор/00 - Карта подготовки.md",
-    "02 - Карта навыков системного администратора.md",
-    "Linux заметки/Пользователи группы/00 - Карта темы.md",
+    "Траблшутинг/01 - Troubleshooting в Linux.md",
     "Сети/08 - Сетевая диагностика.md",
-    "Сети/07 - VPN и OpenVPN.md",
+    "00 - Главная карта базы знаний.md",
+    "chatgpt_share_snippets.txt",
+    "chatgpt_share_text.txt",
+    "chatgpt_share.html",
     "Сети/06 - NAT.md",
-    "Сети/05 - DNS.md",
-    "Сети/04 - DHCP.md",
-    "Сети/03 - TCP IP - базовая модель.md",
-    "Сети/02 - Маска подсети - быстрая памятка.md",
-    "Сети/01 - Диапазоны сетей - краткая памятка.md",
-    "Git заметки/00 - Карта темы.md",
-    "Сети/00 - Карта темы.md",
+    "Сети/07 - VPN и OpenVPN.md",
+    "Windows Server заметки",
     "Сети/📘 Что Ещё надо знать про сети.pdf",
-    "Вакансии/Постак - системный администратор",
+    "Вакансии/системный администратор",
     "Вакансии",
     "vacancy_extract.txt",
     "Systemd заметки",
-    "Git заметки",
-    "Linux заметки/ssh/Передача файлов"
+    "Git заметки"
   ]
 }

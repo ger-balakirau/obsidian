@@ -1,5 +1,10 @@
 # Команды Windows Server - шпаргалка
 
+Более учебные памятки:
+
+- [[14 - Оснастки Windows - msc команды]]
+- [[15 - Команды Windows админа наизусть]]
+
 ## Сеть
 
 ```cmd
@@ -17,6 +22,22 @@ PowerShell:
 Test-NetConnection server -Port 445
 Get-NetIPConfiguration
 Get-DnsClientServerAddress
+```
+
+## Windows NAT
+
+Подробнее: [[11 - Windows NAT через PowerShell]]
+
+```powershell
+Get-NetNat
+New-NetNat -Name "LabNAT" -InternalIPInterfaceAddressPrefix 10.0.0.0/8
+New-NetNat -Name "LabNAT" -InternalIPInterfaceAddressPrefix 10.10.0.0/24
+Remove-NetNat -Name "LabNAT"
+Remove-NetNat -Name "LabNAT" -Confirm:$false
+Get-NetNat | Remove-NetNat
+Get-NetIPConfiguration
+Get-NetAdapter
+Get-NetIPAddress
 ```
 
 ## Домен и GPO
