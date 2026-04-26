@@ -1,0 +1,7 @@
+# Obsidian local settings and workspace state
+.obsidian/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
