@@ -8,6 +8,8 @@
 2. [[Linux заметки/Пользователи группы/00 - Карта темы|Пользователи, группы и права]]
 3. [[Linux заметки/ssh/00 - Карта темы|SSH]]
 4. [[02 - Ubuntu Server - базовая настройка]]
+5. [[03 - Смена hostname в Linux]]
+6. [[04 - Ubuntu lab proxy bastion и reverse proxy]]
 
 ## Что закрывает раздел
 
@@ -16,8 +18,11 @@
 - Поиск файлов и текста.
 - Пайпы, фильтрация, просмотр логов.
 - Пользователи, группы и права.
+- Смена пароля `root` и безопасная работа через `sudo`.
 - SSH-доступ и ключи.
 - Базовая настройка Ubuntu Server.
+- Смена hostname и связь hostname с DNS/hosts.
+- Lab-схема Ubuntu proxy/bastion для SSH и reverse proxy.
 
 ## Связанные разделы
 
@@ -39,5 +44,8 @@ less
 tail -f
 chmod
 chown
+sudo passwd root
+hostnamectl
+sudo hostnamectl set-hostname proxy-vm
 ssh user@host
 ```

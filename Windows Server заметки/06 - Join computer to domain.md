@@ -2,6 +2,8 @@
 
 Ввод компьютера в домен добавляет его в Active Directory и позволяет управлять им через доменные учётки и GPO.
 
+Автоматизация ввода с флешки и Offline Domain Join: [[16 - Автоматический ввод ПК в домен с флешки]].
+
 ## Что нужно заранее
 
 - компьютер видит сеть домена;
@@ -37,6 +39,22 @@ Domain
 ```powershell
 Add-Computer -DomainName domain.local -Credential domain\admin -Restart
 ```
+
+Сразу в нужную OU:
+
+```powershell
+Add-Computer `
+    -DomainName domain.local `
+    -OUPath "OU=Workstations,DC=domain,DC=local" `
+    -Credential domain\admin `
+    -Restart
+```
+
+## Через Offline Domain Join
+
+Если не хочешь вводить доменный логин и пароль на новом ПК, используй `djoin`.
+
+Подробная практика: [[16 - Автоматический ввод ПК в домен с флешки]].
 
 ## После join
 

@@ -138,6 +138,8 @@ sudo hostnamectl set-hostname my-server
 hostnamectl
 ```
 
+Подробная заметка: [[03 - Смена hostname в Linux]].
+
 Проверь `/etc/hosts`:
 
 ```bash
@@ -312,3 +314,4 @@ timedatectl status
 - логи: [[Systemd заметки/04 - journalctl - просмотр логов]];
 - диагностика сервисов: [[Systemd заметки/07 - Диагностика systemd-сервисов]];
 - передача файлов на сервер: [[Linux заметки/ssh/Передача файлов/00 - Карта темы]].
+- lab proxy/bastion: [[04 - Ubuntu lab proxy bastion и reverse proxy]].
