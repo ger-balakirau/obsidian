@@ -160,6 +160,8 @@ sudo apt install -y \
   gnupg lsb-release net-tools
 ```
 
+Если нужен `apt` через HTTPS или сторонние репозитории: [[05 - apt через https]].
+
 Минимум для диагностики:
 
 ```bash
@@ -222,6 +224,102 @@ sudo sysctl vm.swappiness=10
 ```text
 vm.swappiness=10
 ```
+
+### Удалить swapfile
+
+Сначала проверить, какой swap сейчас включён:
+
+```bash
+swapon --show
+free -h
+```
+
+Выключить конкретный swapfile:
+
+```bash
+sudo swapoff /swapfile
+```
+
+Удалить строку автоподключения из `/etc/fstab`:
+
+```bash
+sudo nano /etc/fstab
+```
+
+Убрать или закомментировать строку:
+
+```text
+/swapfile none swap sw 0 0
+```
+
+Удалить сам файл:
+
+```bash
+sudo rm /swapfile
+```
+
+Проверить:
+
+```bash
+swapon --show
+free -h
+```
+
+Если `swapon --show` ничего не выводит, swapfile больше не используется.
+
+### Пересоздать swapfile
+
+Пересоздание нужно, если swapfile слишком маленький, слишком большой, создан неправильно или хочется поменять размер.
+
+Пример: пересоздать swapfile на 4 GB.
+
+```bash
+sudo swapoff /swapfile
+sudo rm /swapfile
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
+Проверить:
+
+```bash
+swapon --show
+free -h
+```
+
+Если строки в `/etc/fstab` ещё не было, добавить:
+
+```bash
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+Если строка уже была, второй раз добавлять её не нужно. Иначе в `/etc/fstab` появятся дубли.
+
+Проверить, что строка есть только один раз:
+
+```bash
+grep swapfile /etc/fstab
+```
+
+Если `fallocate` не сработал, создать файл через `dd`:
+
+```bash
+sudo dd if=/dev/zero of=/swapfile bs=1M count=4096
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
+### Главное про swapfile
+
+- Перед удалением swapfile нужно выполнить `swapoff`.
+- После удаления нужно убрать строку из `/etc/fstab`.
+- После создания нужны права `600`, иначе swap может не включиться.
+- `mkswap` подготавливает файл как swap.
+- `swapon` включает swap прямо сейчас.
+- `/etc/fstab` включает swap после перезагрузки.
 
 ## 10. Проверить ресурсы и сервисы
 
@@ -315,3 +413,4 @@ timedatectl status
 - диагностика сервисов: [[Systemd заметки/07 - Диагностика systemd-сервисов]];
 - передача файлов на сервер: [[Linux заметки/ssh/Передача файлов/00 - Карта темы]].
 - lab proxy/bastion: [[04 - Ubuntu lab proxy bastion и reverse proxy]].
+- Docker Engine: [[Linux заметки/Docker/00 - Карта темы]].

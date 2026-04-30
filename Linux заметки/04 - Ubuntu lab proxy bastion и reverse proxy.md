@@ -118,7 +118,7 @@ network:
         - to: default
           via: 10.10.0.1
       nameservers:
-        addresses:
+        addresses: # DNS сервера
           - 1.1.1.1
           - 8.8.8.8
 ```

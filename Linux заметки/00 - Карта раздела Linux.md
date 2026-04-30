@@ -10,6 +10,10 @@
 4. [[02 - Ubuntu Server - базовая настройка]]
 5. [[03 - Смена hostname в Linux]]
 6. [[04 - Ubuntu lab proxy bastion и reverse proxy]]
+7. [[05 - apt через https]]
+8. [[Linux заметки/Docker/00 - Карта темы|Docker]]
+9. [[06 - Архивы в Linux - tar gzip zip]]
+10. [[Linux заметки/Ansible/00 - Карта темы|Ansible]]
 
 ## Что закрывает раздел
 
@@ -21,8 +25,12 @@
 - Смена пароля `root` и безопасная работа через `sudo`.
 - SSH-доступ и ключи.
 - Базовая настройка Ubuntu Server.
+- `apt` через HTTPS и базовые пакеты для внешних репозиториев.
 - Смена hostname и связь hostname с DNS/hosts.
 - Lab-схема Ubuntu proxy/bastion для SSH и reverse proxy.
+- Docker Engine, Docker Compose plugin и базовый запуск контейнеров.
+- Архивы: упаковка, распаковка, выбор отдельных файлов и масок.
+- Ansible: inventory, запуск playbook, SSH-подключение и автоматизация.
 
 ## Связанные разделы
 
@@ -47,5 +55,10 @@ chown
 sudo passwd root
 hostnamectl
 sudo hostnamectl set-hostname proxy-vm
+sudo apt install -y apt-transport-https ca-certificates
+docker compose version
+tar -xzf archive.tar.gz
+zip -r archive.zip folder/
+ansible-playbook -i inventory.ini site.yml
 ssh user@host
 ```
