@@ -76,6 +76,78 @@ ssh-keygen -t ed25519 -f ~/.ssh/deploy_key -C "deploy key" -N ""
 
 ---
 
+## Генерация ключа в Windows PowerShell
+
+В Windows путь к домашней директории удобно брать через переменную:
+
+```powershell
+$env:USERPROFILE
+```
+
+Создать ключ `ed25519` в PowerShell:
+
+```powershell
+ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\vm_app_ed25519" -C "balakirev@VM-app" -N ""
+```
+
+Что получится:
+
+```text
+C:\Users\<user>\.ssh\vm_app_ed25519      # приватный ключ
+C:\Users\<user>\.ssh\vm_app_ed25519.pub  # публичный ключ
+```
+
+Что значат параметры:
+
+```text
+-t ed25519                         тип ключа
+-f "$env:USERPROFILE\.ssh\..."     куда сохранить ключ
+-C "balakirev@VM-app"              комментарий
+-N ""                              пустой пароль ключа
+```
+
+Если папки `.ssh` ещё нет:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.ssh"
+```
+
+Посмотреть публичный ключ:
+
+```powershell
+Get-Content "$env:USERPROFILE\.ssh\vm_app_ed25519.pub"
+```
+
+Подключиться с этим ключом:
+
+```powershell
+ssh -i "$env:USERPROFILE\.ssh\vm_app_ed25519" user@10.10.0.11
+```
+
+С нестандартным портом:
+
+```powershell
+ssh -i "$env:USERPROFILE\.ssh\vm_app_ed25519" -p 2222 user@server
+```
+
+Добавить в Windows SSH config:
+
+```text
+Host vm-app
+    HostName 10.10.0.11
+    User user
+    IdentityFile ~/.ssh/vm_app_ed25519
+    IdentitiesOnly yes
+```
+
+После этого:
+
+```powershell
+ssh vm-app
+```
+
+---
+
 ## Создание ключа с паролем
 
 ```bash

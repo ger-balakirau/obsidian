@@ -51,6 +51,7 @@ git push
 
 ```bash
 git push -u origin feature/name
+git push -u origin main
 ```
 
 После `-u` дальше можно писать просто:

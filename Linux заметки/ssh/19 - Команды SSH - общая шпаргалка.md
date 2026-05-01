@@ -56,6 +56,14 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/legacy_rsa -C "legacy"
 cat ~/.ssh/work_ed25519.pub
 ```
 
+Windows PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.ssh"
+ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\vm_app_ed25519" -C "balakirev@VM-app" -N ""
+Get-Content "$env:USERPROFILE\.ssh\vm_app_ed25519.pub"
+```
+
 ## Добавление ключа на сервер
 
 Подробнее: [[07 - Добавление публичного ключа на сервер]]
